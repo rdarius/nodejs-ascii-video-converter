@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "convert:gif:gif": "node index gif:gif",
+    "convert:gif:mp4": "node index gif:mp4",
+    "convert:mp4:mp4": "node index mp4:mp4",
+    "convert:mp4:gif": "node index mp4:gif",
+    "convert:img": "node index img",
+    "help": "node index"
   },
   "author": "",
   "license": "ISC",

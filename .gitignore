@@ -2,6 +2,7 @@
 *.png
 *.mp3
 *.gif
+*.webm
 converted-ss/
 tmp-ss/
 node_modules/

@@ -1,4 +1,5 @@
-module.exports = convertToAscii = async (file, dotSize = 24, verticalSpacinModifier = 4, output = __dirname + '/tmp.img.png') => {
+module.exports = convertToAscii = async (file = __dirname + 'input.png', output = __dirname + '/output.png', dotSize = 24, verticalSpacinModifier = 4, callback) => {
+    console.log('converting image to ascii');
     const hobbitImageFile = file;
     const density = 'Ñ@#W$9876543210?!abc;:+=-,._ ';
 
@@ -33,6 +34,11 @@ module.exports = convertToAscii = async (file, dotSize = 24, verticalSpacinModif
 
             ctx.fillStyle = 'black';
             ctx.fillRect(0, 0, hobbit.width * dotSize, hobbit.height * dotSize);
+                    
+            ctx.font = (dotSize + verticalSpacinModifier) + "px Courier";
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = `white`;
 
             for(let x = 0; x < hobbit.width; x++) {
                 for(let y = 0; y < hobbit.height; y++) {
@@ -42,22 +48,16 @@ module.exports = convertToAscii = async (file, dotSize = 24, verticalSpacinModif
                     const b = hobbit.pixels[pixelPosition + 2];
                     const a = hobbit.pixels[pixelPosition + 3];
                     
-                    const avg = Math.floor((r+g+b)/ 3);
+                    const avg = Math.floor((r+g+b)/ 3) * (a/255);
 
                     const gray = map(255 - avg, 0, 255, 0, density.length);
-                    
-                    ctx.font = (dotSize + verticalSpacinModifier) + "px Courier";
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'middle';
-                    ctx.fillStyle = `white`;
                     ctx.fillText(density.charAt(gray), x*dotSize + dotSize/2, y*dotSize + dotSize/2);
                 }
             }
             
             ImageDataURI.outputFile(canvas.toDataURL(), output);
-            console.log(output, 'converted');
             res(1);
         });
-
     });
+    callback(output);
 }
