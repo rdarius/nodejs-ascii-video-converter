@@ -1,0 +1,19 @@
+{
+  "name": "virtualcanvas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.9.0",
+    "ffmpeg-extract-frames": "^2.0.2",
+    "fs-extra": "^10.0.0",
+    "image-data-uri": "^2.0.1",
+    "image-size": "^1.0.1",
+    "png-js": "^1.0.0"
+  }
+}
