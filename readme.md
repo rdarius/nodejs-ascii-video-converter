@@ -52,4 +52,4 @@
 
 ### Convert PNG to ASCII PNG
 
-`npm run convert:img [input-gif-file] [output-gif-file] [pixel-size] [font-size-modifier]`
+`npm run convert:img [input-file] [output-file] [pixel-size] [font-size-modifier]`
