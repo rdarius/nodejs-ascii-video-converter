@@ -10,6 +10,7 @@
 ## Commands
 
 ### Options
+
     - input-file
         - file to be converted (original is kept)
         - default: input.mp4/input.gif/input.png depending on command used
@@ -52,4 +53,4 @@
 
 ### Convert PNG to ASCII PNG
 
-`npm run convert:img [input-file] [output-file] [pixel-size] [font-size-modifier]`
+`npm run convert:img [input-file] [output-file] [pixel-size] [font-size-modifier] [scaled-size]`

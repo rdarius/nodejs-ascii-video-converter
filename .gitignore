@@ -3,6 +3,8 @@
 *.mp3
 *.gif
 *.webm
+*.heic
+*.heif
 converted-ss/
 tmp-ss/
 node_modules/
