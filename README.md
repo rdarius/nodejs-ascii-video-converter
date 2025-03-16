@@ -54,3 +54,6 @@
 ### Convert PNG to ASCII PNG
 
 `npm run convert:img [input-file] [output-file] [pixel-size] [font-size-modifier] [scaled-size]`
+
+
+Contributing to pointless projects made with JavaScript :3
